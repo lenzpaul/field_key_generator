@@ -1,0 +1,19 @@
+targets:
+  $default:
+    builders:
+      source_gen:combining_builder:
+        options:
+          ignore_for_file:
+          - lint_alpha
+          - lint_beta
+    
+builders:
+  fieldKeyBuilder:
+    import: "package:field_key_generator/src/builder.dart"
+    builder_factories: ["fieldKeyBuilder"]
+    build_extensions: {".dart": [".fieldName.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen:combining_builder"]
+
+

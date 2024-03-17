@@ -1,0 +1,19 @@
+name: field_key_generator
+description: Automated generation of type-safe field access keys for Dart classes.
+version: 0.0.1
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.2.3
+
+
+dependencies:
+  build: ^2.4.1
+  source_gen: ^1.5.0
+  analyzer: ^6.2.0 
+
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
+  build_runner: ^2.0.0
