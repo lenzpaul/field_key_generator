@@ -1,5 +1,3 @@
-import 'package:build/build.dart';
-
 /// {@template generate_field_keys}
 /// Mark a class for field key generation, allowing for type-safe access to
 /// field names.
