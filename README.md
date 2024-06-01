@@ -1,14 +1,12 @@
  # Field Key Generator
- The Field Key Generator library provides a mechanism to generate type-safe
- access to field names in Dart classes. By using annotations, it automates
- the creation of a companion class containing static constants for field
- names.
 
- The Field Key Generator simplifies code maintenance and helps prevent runtime
- errors when accessing field names.
+Static reflection for Flutter. Similar to [dart:mirrors](https://api.dart.dev/stable/3.4.2/dart-mirrors/dart-mirrors-library.html), but uses compile time code generation.
 
+The package will create a companion class that holds static constants representing each field in the original class.
 
 ## Example
+
+https://github.com/lenzpaul/field_key_generator/assets/34327253/c795d522-9cfb-4b75-804f-ab264c821274
 
 To run the example, follow these steps:
 - Run build_runner to generate the field keys: `dart run build_runner build`
