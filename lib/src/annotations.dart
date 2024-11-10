@@ -41,6 +41,7 @@ class GenerateFieldKeys {
   const GenerateFieldKeys({
     this.include = const [],
     this.exclude = const [],
+    this.useSnakeCase = false,
   });
 
   /// The fields to include in the generated class.
@@ -48,4 +49,7 @@ class GenerateFieldKeys {
 
   /// The fields to exclude from the generated class..
   final List<String> exclude;
+
+  /// Whether to use snake_case for the generated field keys.
+  final bool useSnakeCase;
 }

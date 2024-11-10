@@ -16,3 +16,20 @@ class Person {
     required this.age,
   });
 }
+
+@GenerateFieldKeys(useSnakeCase: true)
+class PersonSnakeCase {
+  final String firstName;
+  final String lastName;
+  final int age;
+  final String aLongFieldName;
+
+  String get fullName => '$firstName $lastName';
+
+  PersonSnakeCase({
+    required this.firstName,
+    required this.lastName,
+    required this.age,
+    required this.aLongFieldName,
+  });
+}
