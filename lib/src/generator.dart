@@ -35,6 +35,8 @@ class FieldKeysGenerator extends GeneratorForAnnotation<GenerateFieldKeys> {
     final List<String> exclude =
         convertToStringList(annotation.read('exclude'));
 
+    final bool useSnakeCase = annotation.read('useSnakeCase').boolValue;
+
     if (include.isNotEmpty && exclude.isNotEmpty) {
       throw InvalidGenerationSourceError(
         'Cannot specify both `include` and `exclude` on $GenerateFieldKeys annotation.',
@@ -74,7 +76,12 @@ class FieldKeysGenerator extends GeneratorForAnnotation<GenerateFieldKeys> {
         continue;
       }
 
-      buffer.writeln('  static const String $fieldName = \'$fieldName\';');
+      if (useSnakeCase) {
+        buffer.writeln(
+            '  static const String $fieldName = \'${fieldName.replaceAll(RegExp(r'(?<=[a-z])(?=[A-Z])'), '_').toLowerCase()}\';');
+      } else {
+        buffer.writeln('  static const String $fieldName = \'$fieldName\';');
+      }
     }
 
     buffer.writeln('}');
